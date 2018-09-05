@@ -1,4 +1,4 @@
-# Docker blih Epitech.
+# Kong API management in Docker.
 
 __Summary__:
 
