@@ -1,0 +1,25 @@
+<div style="margin-top: 15px; margin-bottom: 20px;">
+  <input type="checkbox"
+         class="filled-in validate"
+         id="{{ 'property-' + $ctrl.path }}"
+         ng-model="$ctrl.object[$ctrl.key]"
+         ng-disabled="{{ $ctrl.schema.readonly }}"
+         ng-true-value="true"
+         ng-false-value="false" />
+  <label for="{{ 'property-' + $ctrl.path }}">
+    {{ $ctrl.label }}
+  </label>
+
+  <div
+    class="red-text errors"
+    ng-if="$ctrl.error"
+    id="{{ 'error-' + $ctrl.path }}"
+    ng-bind-html="$ctrl.error | arrayToHtmlList">
+  </div >
+
+  <p ng-if="$ctrl.schema.description"
+     class="grey-text"
+     style="margin-top: 0; margin-bottom: 30px; font-size: 85%">
+    <em>{{ $ctrl.schema.description }}</em>
+  </p>
+</div>

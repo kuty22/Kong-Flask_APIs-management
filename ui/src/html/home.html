@@ -1,0 +1,50 @@
+<div class="container">
+    <h3 class="header">Welcome to Kong Dashboard</h3>
+    <p class="flow-text">
+        Kong dashboard is a central hub for you to manage your Kong setup.
+    </p>
+    <p>&nbsp;</p>
+    <div class="row">
+        <div class="col s4 home-block">
+            <h5>Learn Kong</h5>
+            <p>
+                This Dashboard will let you interact with your Kong API to create or edit <strong>APIs</strong>,
+                <strong>Consumers</strong> and <strong>Plugins</strong>.
+            </p>
+            <p>
+                Wondering what all that means? Have a look at the Kong documentation.
+            </p>
+        </div>
+        <div class="col s4 home-block">
+            <h5>Get started</h5>
+            <p>Not sure where to start?</p>
+            <p>
+                How about listing your <a href="#!/apis">current APIs</a> or
+                <a href="#!/consumers">Consumers</a>, creating a <a href="#!/apis/add">new API</a> or a
+                <a href="#!/consumers/add">new Consumer</a>?
+            </p>
+        </div>
+        <div class="col s4 home-block">
+            <h5>Contribute</h5>
+            <p>Kong Dashboard is an open source project hosted on github.</p>
+            <p>Special thanks to 5 top contributors:</p>
+            <div class="chip" ng-repeat="contributor in contributors">
+                <img ng-src="{{ contributor.avatar_url }}" alt="{{ contributor.login }} avatar">
+                <a href="{{ contributor.html_url }}">
+                    {{ contributor.login }}
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s4">
+            <a href="https://getkong.org/docs/" target="_blank" class="btn">Documentation</a>
+        </div>
+        <div class="col s4">
+            <a href="#!/apis/add" class="btn">Create an API</a>
+        </div>
+        <div class="col s4">
+            <a href="https://github.com/PGBI/kong-dashboard" target="_blank" class="btn">Github page</a>
+        </div>
+    </div>
+</div>

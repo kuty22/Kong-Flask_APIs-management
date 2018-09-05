@@ -1,0 +1,155 @@
+@import './node_modules/materialize-css/sass/materialize.scss';
+
+$sideNavWidth: 250px;
+
+/*************\
+ *  Layout   *
+\*************/
+ul.side-nav {
+    transform: translateX(0) !important;
+    width: $sideNavWidth;
+}
+
+section.content {
+    margin-left: $sideNavWidth;
+    display: flex;
+    min-height: 100vh;
+    min-width: 800px;
+    flex-direction: column;
+    background-color: #fdfdfd;
+
+    main {
+        flex-grow: 1;
+    }
+
+    footer {
+        background-color: $primary-color;
+        p {
+            padding-right: 15px;
+            text-align: right;
+        }
+    }
+}
+
+.container {
+    width: 85%;
+}
+
+/*************\
+ *   Typo    *
+\*************/
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight:300;
+    &.header {
+        color: $primary-color;
+        margin-top:50px;
+        margin-bottom:50px;
+    }
+}
+
+a {
+    cursor: pointer;
+}
+
+/*************\
+ *   Misc    *
+\*************/
+
+ul.horizontal {
+    padding: 0;
+    margin:0;
+    > li {
+        display: inline-block;
+        vertical-align: top;
+    }
+}
+
+li.search {
+    position: relative;
+    max-height: 55px;
+
+    .search-wrapper {
+        margin: 0 12px;
+        transition: margin .25s ease;
+
+        .search-results {
+            border-left: none;
+            border-right: none;
+        }
+
+        input.search {
+            display: block;
+            font-size: 16px;
+            font-weight: 300;
+            width: 100%;
+            height: 45px;
+            margin: 0;
+            margin-left: 25px;
+            box-sizing: border-box;
+            padding: 0 45px 0 15px;
+            border: 0;
+
+            &:focus {
+                outline: none;
+                box-shadow: none
+            }
+        }
+
+        i {
+            position:absolute;
+            top:10px;
+            left:10px;
+        }
+    }
+}
+
+.loadingIndicator {
+    position:absolute;
+    top:0;
+    left:0;
+    padding:2px 5px;
+    color:white;
+}
+
+.white-text > a {
+    color: white;
+    text-decoration:underline;
+}
+
+.fade.ng-hide {
+    opacity: 0;
+    position:relative;
+    top: -5000px;
+}
+.fade.ng-hide-remove, .fade.ng-hide-add {
+    display: block !important;
+    position: static;
+}
+.fade.ng-hide-remove {
+    transition: all linear 1000ms;
+    position: static;
+}
+
+.fade.ng-hide-add {
+    transition: all linear 500ms;
+    position: static;
+}
+
+.home-block p {
+    text-align:justify;
+}
+
+.errors ul {
+    margin:0;
+    list-style-position: inside;
+
+    li {
+        list-style-type: circle;
+    }
+}
+
+// Fix checkbox not being aligned with label in a multiple select
+.select-wrapper [type="checkbox"]+label {
+    display: inline;
+}

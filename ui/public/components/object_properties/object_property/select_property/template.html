@@ -1,0 +1,24 @@
+<div class="input-field">
+  <select materialize-select
+          id="{{ 'property-' + $ctrl.path }}"
+          ng-options="value as key for (key, value) in $ctrl.options"
+          ng-disabled="{{ $ctrl.schema.readonly }}"
+          ng-model="$ctrl.object[$ctrl.key]">
+    <option value="" disabled selected>Choose option</option>
+  </select>
+  <label>{{ $ctrl.label }}</label>
+
+  <div
+    style="margin-top: -15px;"
+    id="{{ 'error-' + $ctrl.path }}"
+    class="red-text errors"
+    ng-if="$ctrl.error"
+    ng-bind-html="$ctrl.error | arrayToHtmlList">
+  </div >
+
+  <p ng-if="$ctrl.schema.description"
+     class="grey-text"
+     style="margin-top: 0; margin-bottom: 30px; font-size: 85%">
+    <em>{{ $ctrl.schema.description }}</em>
+  </p>
+</div>

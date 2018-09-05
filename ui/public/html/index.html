@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-strict-di>
+<head>
+  <meta charset="UTF-8">
+  <title>Kong Dashboard</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/app.min.css" >
+</head>
+<body>
+<app-route-loading-indicator></app-route-loading-indicator>
+
+<ul class="side-nav fixed">
+  <li>
+    <a href="#!/" class="waves-effect">
+      <i class="material-icons">home</i> Home
+    </a>
+  </li>
+  <li>
+    <a href="#!/apis" class="waves-effect">
+      <i class="material-icons">apps</i> APIs
+    </a>
+  </li>
+  <li>
+    <a href="#!/consumers" class="waves-effect">
+      <i class="material-icons">account_box</i> Consumers
+    </a>
+  </li>
+  <li>
+    <a href="#!/plugins" class="waves-effect">
+      <i class="material-icons">extension</i> Plugins
+    </a>
+  </li>
+  <li ng-if="env.schemas.sni">
+    <a href="#!/snis" class="waves-effect">
+      <i class="material-icons">dns</i> SNIs
+    </a>
+  </li>
+  <li ng-if="env.schemas.certificate">
+    <a href="#!/certificates" class="waves-effect">
+      <i class="material-icons">https</i> Certificates
+    </a>
+  </li>
+  <li ng-if="env.schemas.upstream">
+    <a href="#!/upstreams" class="waves-effect">
+      <i class="material-icons">input</i> Upstreams
+    </a>
+  </li>
+</ul>
+
+<section class="content">
+  <main ng-view></main>
+  <footer>
+    <p class="grey-text text-lighten-4">
+      Kong node: {{ env.kong_url }} v{{ env.kong_version }} — Kong-Dashboard v{{ env.kong_dashboard_version }}
+    </p>
+  </footer>
+</section>
+
+
+<script src="config"></script>
+<script src="js/app.min.js"></script>
+</body>
+</html>
