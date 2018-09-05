@@ -67,8 +67,10 @@ routes:
   - /json
   - /text
 
-  Get:
-  `curl -L -i -X GET http://0.0.0.0:8000/no-auth/ --header 'Host: no-auth.com'`
+Get:
+
+`curl -L -i -X GET http://0.0.0.0:8000/no-auth/ --header 'Host: no-auth.com'`
+
 ---
 **key-aut.com**:
 
@@ -77,19 +79,22 @@ routes:
   - /json
   - /text
 
-  Get:
-  `curl -L -i -X GET http://0.0.0.0:8000/key-auth/ --header 'Host: no-auth.com'`
-  `curl -L -i -X GET http://0.0.0.0:8000/new_api/ --header 'Host: new-api.com'`
+Get:
+
+`curl -L -i -X GET http://0.0.0.0:8000/key-auth/ --header 'Host: no-auth.com'`
+
 ---
 **basic-aut.com**:
 
-  routes:
-    - /
-    - /json
-    - /text
+routes:
+  - /
+  - /json
+  - /text
 
-    Get:
-    `curl -L -i -X GET http://0.0.0.0:8000/no-auth/ --header 'Host: no-auth.com'`
+  Get:
+
+  `curl -L -i -X GET http://0.0.0.0:8000/no-auth/ --header 'Host: no-auth.com'`
+
 ---
 
 You can also configure and manage your APIs in a browser at: http://localhost:8080
