@@ -13,10 +13,9 @@ __Summary__:
 
 This project is an example for a medium article about Kong Apis manager.<Link article>
 
-Kong is used to proxify APIs easely. In this example 3 flask rest api are up in the docker-compose.yml
-then I proxify their address with Kong and add multiple rules, one differents for each api.
+Kong is used to proxify APIs easily. In this example 3 flask rest apis are up in the docker-compose.yml. Their adresses are then proxified with Kong and multiple rules are added, one for each api.
 
-The kong part is a copy of the docker-compose propose by kong (link to offical kong docker repository) in wich I include the work of PGBI (link to his repository).
+The kong part is a copy of the docker-compose provided by kong (link to offical kong docker repository) in which I included the work of PGBI (link to his repository).
 
 ## Description
 
@@ -27,9 +26,9 @@ Required:
 
 APIs:
   - `flask-api-no-auth` doesn't need special authentification.
-  - `flask-api-auth-key` requiered an authentification key.
-  - `flask-api-auth-basic` required an Basic authentification username/password.
-> APIs are not exposed you only can access to them by Kong
+  - `flask-api-auth-key` requieres an authentification key.
+  - `flask-api-auth-basic` requires basic authentification with username/password.
+> APIs are not exposed. You only can access to them via Kong
 
 ## install
 
@@ -37,7 +36,7 @@ install platform:
 ```
 make
 ```
-> more informations about available command with makefile in documentation section.
+> more information about available commands with makefile in documentation section.
 
 You can verify the status of services:
 ```SHELL
@@ -55,10 +54,10 @@ kong-api-auth_kong-migration_1         /docker-entrypoint.sh kong ...   Exit 0
 kong-api-auth_kong_1                   sh /entrypoint.sh                Up (healthy)   7946/tcp, 0.0.0.0:8000->8000/tcp, 0.0.0.0:8001->8001/tcp, 8443/tcp, 8444/tcp                      
 kong-dashboard                         ./docker/entrypoint_dev.sh       Up             0.0.0.0:8080->8080/tcp
 ```
-## How to use it?
+## How to use ?
 
-Once, the platform is up, each services except the migration one that is normaly exit.
-you can get 3 different APIs, which are requiered specific authentification process.
+Once the platform is up, each services are up except the migration one that is normally exited.
+You can do GET requests to 3 different APIs with 3 different authentification processes.
 
 **no-aut.com**:
 
@@ -101,14 +100,14 @@ You can also configure and manage your APIs in a browser at: http://localhost:80
 
 or
 
-You can directly manage by the adress of the kong administration at: http://localhost:8001/
+You can directly manage your apis with the kong administration api at: http://localhost:8001/
 
 example:
-  This commande register an API:
+  This command registers an API:
   ```
   curl -i -X POST --url http://kong:8001/apis/ --data 'name=my_new_api' --data 'uris=/new_api' --data 'hosts=new-api.com' --data 'upstream_url= http://randomprofile.com/api/'
   ```
-  This api previously registred is a profile generator you just have to specify the counties.
+  This api previously registered is a profile generator. To use it, you just have to specify the countries.
   ```
   curl -L -i -X GET http://0.0.0.0:8000/new_api/api.php?countries=GBR --header 'Host: new-api.com'
   ```
