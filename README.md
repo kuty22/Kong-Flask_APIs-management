@@ -136,6 +136,10 @@ _Makefile commands available_:
 
 ## Reference
 
-- [Docker hub Ubuntu](https://hub.docker.com/_/ubuntu/)
 - [Docker](https://www.docker.com)
 - [Docker-compose](https://docs.docker.com/compose/)
+- [Flask](http://flask.pocoo.org/)
+- [Kong website](https://konghq.com/kong-community-edition/)
+- [Kong docker-compose (by Kong)](https://github.com/PGBI/kong-dashboard)
+- [Kong dashboard (by PGBI)](https://github.com/Kong/docker-kong/tree/master/compose)
+- [Example API](https://www.programmableweb.com/api/randomprofile)
