@@ -15,7 +15,7 @@ This project is an example for a medium article about Kong Apis manager.<Link ar
 
 Kong is used to proxify APIs easily. In this example 3 flask rest apis are up in the docker-compose.yml. Their adresses are then proxified with Kong and multiple rules are added, one for each api.
 
-The kong part is a copy of the docker-compose provided by kong (link to offical kong docker repository) in which I included the work of PGBI (link to his repository).
+The kong part is a copy of the docker-compose provided by kong ([link](https://github.com/Kong/docker-kong/tree/master/compose)) in which I included the work of PGBI ([link](https://github.com/PGBI/kong-dashboard)).
 
 ## Description
 
@@ -139,6 +139,6 @@ _Makefile commands available_:
 - [Docker-compose](https://docs.docker.com/compose/)
 - [Flask](http://flask.pocoo.org/)
 - [Kong website](https://konghq.com/kong-community-edition/)
-- [Kong docker-compose (by Kong)](https://github.com/PGBI/kong-dashboard)
-- [Kong dashboard (by PGBI)](https://github.com/Kong/docker-kong/tree/master/compose)
+- [Kong docker-compose (by Kong)](https://github.com/Kong/docker-kong/tree/master/compose)
+- [Kong dashboard (by PGBI)](https://github.com/PGBI/kong-dashboard)
 - [Example API](https://www.programmableweb.com/api/randomprofile)
